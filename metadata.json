@@ -1,0 +1,71 @@
+{
+  "horizon_minutes": 1440,
+  "chosen_models": {
+    "zone1": [
+      "HistGB",
+      "ExtraTrees",
+      "Ridge"
+    ],
+    "zone2": [
+      "HistGB",
+      "ExtraTrees"
+    ],
+    "zone3": [
+      "ExtraTrees"
+    ],
+    "total": [
+      "ExtraTrees"
+    ]
+  },
+  "target_strategy": {
+    "zone1": "delta vs zone1_slot_mean7d",
+    "zone2": "delta vs zone2_lag144",
+    "zone3": "delta vs zone3_lag144",
+    "total": "delta vs total_lag144"
+  },
+  "tuned_histgb_params": {
+    "min_samples_leaf": 100.0,
+    "max_leaf_nodes": 63.0,
+    "max_iter": 600.0,
+    "max_features": 0.5,
+    "learning_rate": 0.03,
+    "l2_regularization": 1.0
+  },
+  "honest_test_metrics_dec2017": {
+    "zone1": {
+      "MAE": 618.172,
+      "RMSE": 885.855,
+      "MAPE_%": 2.2,
+      "R2": 0.979,
+      "MAE improvement %": 23.896
+    },
+    "zone2": {
+      "MAE": 654.54,
+      "RMSE": 1006.807,
+      "MAPE_%": 2.925,
+      "R2": 0.969,
+      "MAE improvement %": 29.134
+    },
+    "zone3": {
+      "MAE": 446.777,
+      "RMSE": 608.33,
+      "MAPE_%": 4.246,
+      "R2": 0.955,
+      "MAE improvement %": -14.823
+    },
+    "total": {
+      "MAE": 1158.174,
+      "RMSE": 1772.333,
+      "MAPE_%": 1.89,
+      "R2": 0.985,
+      "MAE improvement %": 36.397
+    }
+  },
+  "interval_level": 0.9,
+  "sklearn_version": "1.6.1",
+  "history_min_days_needed": 9,
+  "bundles": {
+    "backtest": "trained Jan-Nov",
+    "production": "trained Jan-Dec"
+  }
+}
